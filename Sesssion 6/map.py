@@ -28,7 +28,10 @@ class Map:
         elif direction == "A":
             dx, dy = -1 , 0
         elif direction == "D":
-            dx, dy = 1,0
+            dx, dy = 1,0G
+
+    def check_win(self):
+        return self.box.x == self.gate.x and self.box.y == self.gate.y
 
         self.move_player(dx, dy)
 
@@ -37,7 +40,9 @@ class Map:
             move = input("Your move?: ")
             self.process_input(move)
             self.print()
-
+            if self.check_win():
+                print("you win!")
+                break
 
 
 map = Map(8, 8)
