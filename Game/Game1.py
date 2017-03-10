@@ -53,6 +53,9 @@ class Gate:
         self.x = x
         self.y = y
 
+def play_sound(file_name):
+    pygame.mixer.music.load(file_name)
+    pygame.mixer.music.play(0)
 
 class Map:
     def __init__(self, width, height):
@@ -62,6 +65,7 @@ class Map:
         self.box = Box(6,6)
         self.gate = Gate(7, 7)
 
+
     def move_player(self, dx, dy):
         [next_player_x, next_player_y] = self.player.cal_next_position(dx, dy)
         [next_box_x, next_box_y] = self.box.cal_next_position(dx, dy)
@@ -70,7 +74,9 @@ class Map:
                 if self.check_inside(next_box_y, next_box_y):
                     self.box.move(dx, dy)
                     self.player.move(dx, dy)
+                    play_sound("Laser_Shoot.wav")
             else:
+                play_sound("Laser_Shoot.wav")
                 self.player.move(dx, dy)
 
     def check_inside(self, x, y):
