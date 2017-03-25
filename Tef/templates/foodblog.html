@@ -36,50 +36,14 @@
 
   <!-- First Photo Grid-->
   <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+      {% for cars in car_items %}
     <div class="w3-quarter image" >
-      <img src="http://st.automobilemag.com/uploads/sites/10/2015/09/2016-BMW-750Li-xDrive-rear-three-quarter-01.jpg" alt="750Li" style="width:100%">
-      <h3>BMW 750Li 2016 </h3>
-      <p>Perfect ride for young entrepreneurs.</p>
+      <img src="{{cars.src}}" alt="750Li" style="width:100%">
+      <h3> {{ cars.title }} </h3>
+      <p>{{ cars.description }}</p>
     </div>
-    <div class="w3-quarter image">
-      <img src="http://cdn.bmwblog.com/wp-content/uploads/2016/02/3D-Design-BMW-X6M-24.jpg" alt="X6M" style="width:100%">
-      <h3>BMW X6M</h3>
-      <p>Powerful and Athletic.</p>
-    </div>
-    <div class="w3-quarter image">
-      <img src="http://st.motortrend.com/uploads/sites/5/2014/11/2016-Mercedes-Maybach-S600-front-end.jpg" alt="S600" style="width:100%">
-      <h3>Mercedes-bendz S600</h3>
-      <p>Ultimate Luxury.</p>
-    </div>
-    <div class="w3-quarter image">
-      <img src="http://st.motortrend.com/uploads/sites/5/2016/06/2017-Porsche-Panamera-Turbo-rear-three-quarter-in-motion-02.jpg" alt="Panamera" style="width:100%">
-      <h3>Porsche Panamera Turbo</h3>
-      <p>The best sport sedan you can find.</p>
-    </div>
-  </div>
-  
-  <!-- Second Photo Grid-->
-  <div class="w3-row-padding w3-padding-16 w3-center">
-    <div class="w3-quarter image">
-      <img src="http://cdn.pinthiscars.com/images/bmw-640i-2016-2.jpg" alt="M6" style="width:100%">
-      <h3>BMW M6 Gran Coupe'</h3>
-      <p>My freaking dream car!!</p>
-    </div>
-    <div class="w3-quarter image">
-      <img src="https://preview2.netcarshow.com/Land_Rover-Range_Rover_SV_Autobiography-2016-hd.jpg" alt="Velar" style="width:100%">
-      <h3>Range Rover SV Autobiography</h3>
-      <p>Luxury SUV.</p>
-    </div>
-    <div class="w3-quarter image">
-      <img src="https://preview2.netcarshow.com/Lexus-LX_570-2016-hd.jpg" alt="LX570" style="width:100%">
-      <h3>Lexus LX 570</h3>
-      <p>A freaking tank on the road.</p>
-    </div>
-    <div class="w3-quarter image">
-      <img src="https://www.netcarshow.com/Tesla-Model_S-2013-1280-02.jpg" alt="ModelS" style="width:100%">
-      <h3>Tesla Model S</h3>
-      <p>Ultimate Electric Monster.</p>
-    </div>
+      {% endfor %}
+
   </div>
 
 
