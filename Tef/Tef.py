@@ -47,7 +47,17 @@ def delete_cars():
             new_car.delete()
         return render_template("deletecars.html")
 
-@app.route('/updatefood')
+@app.route('/updatecars', methods=["GET", "POST"])
+def update():
+    if (request.method == "GET"):
+        return render_template("updatecars.html")
+    if (request.method == "POST"):
+        new_car = CarItems.objects(title=request.form["title"]).first()
+        if new_car is not None:
+            new_car.src = request.form["new_source"]
+            new_car.description = request.form["new_description"]
+            new_car.save()
+        return render_template("updatecars.html")
 
 @app.route('/foodblog')
 def foodblog():
