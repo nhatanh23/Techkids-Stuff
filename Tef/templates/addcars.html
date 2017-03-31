@@ -8,17 +8,15 @@
 <body>
     <form class="w3-container" method ="post" enctype="multipart/form-data">
         <label>Source</label>
-        <input class="w3-input" type="text" name="source">
-
-        <label>Title</label>
-        <input class="w3-input" type="file" name="image">
-
+        <input class="w3-input" type="file" accept="image/*" name="source">
 
         <label>Title</label>
         <input class="w3-input" type="text" name="title">
 
         <label>Description</label>
         <input class="w3-input" type="text" name="description">
+
+        <a href="/logout" class="w3-bar-item w3-button w3-red">Logout</a>
 
         <input type="submit" class="w3-btn w3-teal" value="Submit">
     </form>
